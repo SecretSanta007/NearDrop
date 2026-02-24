@@ -11,14 +11,18 @@ The app lives in your menu bar and saves files to your downloads folder. It's th
 
 ## Installation
 
-Download the latest build from the releases section, unzip, move to your applications folder. When running for the first time, right-click the app and select "Open", then confirm running an app from unidentified developer.
+Download the latest build from the releases section, unzip, move to your applications folder.
+
+Before running for the first time, right-click the app and select "Open", then confirm running an app from unidentified developer.
+
+Alternatively, you can use [Sentinel](https://github.com/alienator88/Sentinel) to bypass Gatekeeper.
 
 If you want the app to start on boot, [follow these steps to add NearDrop as a login item.](https://support.apple.com/guide/mac-help/open-items-automatically-when-you-log-in-mh15189/mac)
 
 #### Installation with Homebrew
 
 ```
-brew install --no-quarantine grishka/grishka/neardrop
+brew install grishka/grishka/neardrop && sudo xattr -r -d com.apple.quarantine "/Applications/NearDrop.app"
 ```
 
 ## Contributing
