@@ -18,7 +18,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Acceptar"
+            "value" : "Aceptar"
           }
         },
         "fr" : {
@@ -1041,7 +1041,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NearDrop necesita poder mostrar notificaciones para las transferencias de archivos entrantes. Permite las notificaciones en la configuración del sistema."
+            "value" : "NearDrop necesita poder mostrar notificaciones para las transferencias de archivos entrantes. Permita las notificaciones en la configuración del sistema."
           }
         },
         "fr" : {
