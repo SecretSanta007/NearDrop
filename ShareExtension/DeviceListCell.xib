@@ -6,14 +6,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="DeviceListCell" customModule="ShareExtension" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="NSCollectionViewItem">
             <connections>
                 <outlet property="view" destination="Hz6-mo-xeY" id="gtq-ca-SBh"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView misplaced="YES" id="Hz6-mo-xeY" customClass="NSButton">
+        <customView misplaced="YES" id="Hz6-mo-xeY">
             <rect key="frame" x="0.0" y="0.0" width="206" height="82"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
@@ -45,12 +45,9 @@
                 <constraint firstItem="QPM-sE-maP" firstAttribute="top" secondItem="O1J-am-CoK" secondAttribute="bottom" constant="10" id="leg-nD-mHB"/>
                 <constraint firstItem="QPM-sE-maP" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="vvH-Hq-iUk"/>
             </constraints>
-            <connections>
-                <action selector="onClick:" target="-2" id="mve-gp-q4i"/>
-            </connections>
             <point key="canvasLocation" x="-60" y="150"/>
         </customView>
-        <collectionViewItem id="1Lb-iJ-Nar" customClass="DeviceListCell" customModule="ShareExtension" customModuleProvider="target">
+        <collectionViewItem id="1Lb-iJ-Nar" customClass="NSCollectionViewItem">
             <connections>
                 <outlet property="imageView" destination="O1J-am-CoK" id="zQn-mV-bRy"/>
                 <outlet property="textField" destination="QPM-sE-maP" id="s0j-Qq-7iA"/>

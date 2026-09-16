@@ -102,6 +102,8 @@ class ShareViewController: NSViewController, ShareExtensionDelegate{
 		flowLayout.minimumLineSpacing=10
 		listView!.collectionViewLayout=flowLayout
 		listView!.dataSource=self
+		listView!.delegate=self
+		listView!.isSelectable=true
 		
 		progressDeviceIconWrap!.wantsLayer=true
 		progressDeviceIconWrap!.layer!.masksToBounds=false
@@ -317,14 +319,18 @@ extension ShareViewController:NSCollectionViewDataSource{
 	
 	func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
 		let item=collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "DeviceListCell"), for: indexPath)
-		guard let collectionViewItem = item as? DeviceListCell else {return item}
 		let device=foundDevices[indexPath[1]]
-		collectionViewItem.textField?.stringValue=device.name
-		collectionViewItem.imageView?.image=imageForDeviceType(type: device.type)
-		// TODO maybe there's a better way to handle clicks on collection view items? I'm still new to Apple's way of doing UIs so I may do dumb shit occasionally
-		collectionViewItem.clickHandler={
-			self.selectDevice(device: device)
+		item.textField?.stringValue=device.name
+		item.imageView?.image=imageForDeviceType(type: device.type)
+		return item
+	}
+}
+
+extension ShareViewController:NSCollectionViewDelegate{
+	func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+		guard chosenDevice==nil, let indexPath=indexPaths.first else {
+			return
 		}
-		return collectionViewItem
+		selectDevice(device: foundDevices[indexPath.item])
 	}
 }
